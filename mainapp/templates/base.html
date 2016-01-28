@@ -18,27 +18,18 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="{% url 'index' %}">Paul Le Henaff <br>
-        <hr></a>
+        <a class="navbar-brand" href="{% url 'index' %}">
+        <div class="nametag">
+        Paul Le Henaff
+        </div>
+        </a>
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
           {% url 'threedee' as threedee%}
-          <li class="{% if request.path == threedee %}active{% endif %}"><a href="{{threedee}}">3D</a></li>
+          <li class="{% if request.path == threedee %}active{% endif %}"><a href="{{threedee}}">Gallery</a></li>
           {% url 'skills' as skills%}
           <li class="{% if request.path == skills %}active{% endif %}"><a href="{{skills}}">Skills</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Profile</a></li>
-              <li><a href="#">My tasks</a></li>
-              <li><a href="#">My submissions</a></li>
-              <li role="separator" class="divider"></li>
-              <li class="dropdown-header">Nav header</li>
-              <li><a href="#">Separated link</a></li>
-              <li><a href="#">One more separated link</a></li>
-            </ul>
-          </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><a href="#">paullehenaff@msn.com</a></li>
@@ -46,12 +37,13 @@
       </div><!--/.nav-collapse -->
     </div><!--/.container-fluid -->
 </nav>
-<div class="container">
+<div class="container-fluid">
 	{% block content %}
 	{% endblock %}   
 </div>
     
 <script src="{% static 'js/jquery-1.10.2.min.js' %}" rel="text/javascript"></script>
 <script src="{% static 'js/bootstrap.min.js' %}" rel="text/javascript"></script>
+<script src="{% static 'js/custom.js' %}" rel="text/javascript"></script>
 </body>
 </html>

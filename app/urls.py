@@ -27,3 +27,6 @@ urlpatterns = [
     url(r'^threedee/$', views.threedee, name='threedee'),
     url(r'^skills/$', views.skills, name='skills'),
 ]
+
+if settings.DEBUG:
+    urlpatterns.append(url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT, 'show_indexes': True}))
