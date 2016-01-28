@@ -12,13 +12,24 @@ def index(request):
         })
     )
 
-def page2(request):
+def threedee(request):
 
     return render(
         request,
-        'app/page2.html',
+        'app/3d.html',
         context_instance = RequestContext(request,
         {
 
+        })
+    )
+
+def skills(request):
+    skills = None
+    return render(
+        request,
+        'app/skills.html',
+        context_instance = RequestContext(request,
+        {
+            'skills':skills
         })
     )

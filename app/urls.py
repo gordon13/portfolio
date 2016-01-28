@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from app import settings
 
 from mainapp import views
 
@@ -23,5 +24,6 @@ urlpatterns = [
 
     #pages
     url(r'^$', views.index, name='index'),
-    url(r'^page2/$', views.page2, name='page2'),
+    url(r'^threedee/$', views.threedee, name='threedee'),
+    url(r'^skills/$', views.skills, name='skills'),
 ]

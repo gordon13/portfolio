@@ -1,53 +1,56 @@
 <html>
-<title>Starter project</title>
+<title>Paul Le Henaff - Portfolio</title>
 <head>
 	{% load staticfiles %}
 	<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet"/>
   <link href="{% static 'css/bootstrap-theme.min.css' %}" rel="stylesheet"/>
-  <link href="{% static 'css/dgs-theme.css' %}" rel="stylesheet"/>
+  <link href="{% static 'css/theme.css' %}" rel="stylesheet"/>
 </head>
 <body>
 
-
-<div class="container">
-      {% url 'some_urlpattern_name' as url %}
-      <!-- Static navbar -->
-      <nav class="navbar navbar-default">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="{% url 'index' %}">Starter project</a>
-          </div>
-          <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-              {% url 'page2' as page2%}
-              <li class="{% if request.path == page2 %}active{% endif %}"><a href="{{page2}}">Art</a></li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Profile</a></li>
-                  <li><a href="#">My tasks</a></li>
-                  <li><a href="#">My submissions</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li class="dropdown-header">Nav header</li>
-                  <li><a href="#">Separated link</a></li>
-                  <li><a href="#">One more separated link</a></li>
-                </ul>
-              </li>
+{% url 'some_urlpattern_name' as url %}
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="{% url 'index' %}">Paul Le Henaff</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          {% url 'threedee' as threedee%}
+          <li class="{% if request.path == threedee %}active{% endif %}"><a href="{{threedee}}">3D</a></li>
+          {% url 'skills' as skills%}
+          <li class="{% if request.path == skills %}active{% endif %}"><a href="{{skills}}">Skills</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Profile</a></li>
+              <li><a href="#">My tasks</a></li>
+              <li><a href="#">My submissions</a></li>
+              <li role="separator" class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
             </ul>
-          </div><!--/.nav-collapse -->
-        </div><!--/.container-fluid -->
-      </nav>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">paullehenaff@msn.com</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div><!--/.container-fluid -->
+</nav>
+<div class="container">
 	{% block content %}
 	{% endblock %}   
-    </div>
+</div>
     
-    <script src="{% static 'js/jquery-1.10.2.min.js' %}" rel="text/javascript"></script>
-    <script src="{% static 'js/bootstrap.min.js' %}" rel="text/javascript"></script>
+<script src="{% static 'js/jquery-1.10.2.min.js' %}" rel="text/javascript"></script>
+<script src="{% static 'js/bootstrap.min.js' %}" rel="text/javascript"></script>
 </body>
 </html>
