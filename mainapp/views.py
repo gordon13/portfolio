@@ -1,14 +1,16 @@
 from django.shortcuts import render
 from django.template import RequestContext
 
-def index(request):
+from models import Piece
 
+def index(request):
+    pieces = Piece.objects.all()
     return render(
         request,
         'app/index.html',
         context_instance = RequestContext(request,
         {
-
+            'pieces':pieces
         })
     )
 

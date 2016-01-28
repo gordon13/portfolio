@@ -3,7 +3,8 @@
 {% load app_extras %}
 <h1>Home</h1>
 <div class="row">
-	
+	{% for piece in pieces %}
+		<img src="{{piece.image.url}}"></img>
+	{% endfor %}
 </div>
-
 {% endblock %}
