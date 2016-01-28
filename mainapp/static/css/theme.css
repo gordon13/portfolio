@@ -1,3 +1,11 @@
+/* navbar */
+.navbar-inverse {
+	background-image: none;
+	background-color: #222;
+    background-repeat: repeat-x;
+    border-radius: 0px;
+}
+
 /* body */
 body {
 	min-height: 2000px;
