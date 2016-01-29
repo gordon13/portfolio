@@ -1,12 +1,23 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load app_extras %}
-<h1>Home</h1>
 <div class="row">
+	<div class="fullscreen"></div>
 	<div class="gallery">
 	{% for piece in pieces %}
 			<div class="thumbnail" style="background-image: url('{{piece.image.url}}');">
-				<div class="overlay" style="width: 100%; height: 100%; display: none;"></div>
+				<div class="info-overlay" style="display:none">
+					<div class="content">
+						<h2>{{piece.name}}</h2>
+						<p>{{piece.description}}</p>
+						<div class="software">
+							{% for ware in piece.software.all %}
+								<img src="{{ware.image.url}}"/>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+				<div class="dark-overlay" style="display:none"></div>
 			</div>
 	{% endfor %}
 	</div>

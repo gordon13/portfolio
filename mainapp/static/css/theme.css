@@ -1,4 +1,8 @@
 /* navbar */
+.navbar {
+	margin: 0;
+}
+
 .navbar-inverse {
 	background-image: none;
 	background-color: #222;
@@ -32,8 +36,45 @@ body {
 	padding: 0;
     border-radius: 0;
 	border: none;
+	overflow: hidden;
+	position: relative;
+	margin: 0;
 }
-.thumbnail .overlay {
-	background-color: rgba(12, 12, 12, 0.65);
 
+.thumbnail .dark-overlay {
+	background-color: rgba(12, 12, 12, 0.65);
+	position: absolute;
+	width: 300px; 
+	height: 500px;
+
+}
+
+.thumbnail .info-overlay {
+	position: absolute;
+	width: 300px; 
+	height: 500px;
+	margin-left: -300px;
+	-webkit-animation: slide 0.5s forwards;
+    animation: slide 0.5s forwards;
+}
+
+.thumbnail .info-overlay .content{
+	margin-top: 100%;
+	padding: 15px;
+	color: white;
+}
+
+.thumbnail .info-overlay .software img{
+	width: 25%;
+	height: auto;
+	display: inline-block;
+	
+}
+
+@-webkit-keyframes slide {
+    100% { margin-left: 0; }
+}
+
+@keyframes slide {
+    100% { margin-left: 0; }
 }
