@@ -13,6 +13,9 @@ $(".thumbnail").mouseenter( function (){
 	$fullscreen.find(">img").remove();
 	getFullSizeImage($fullscreen, $(this).data("url"));
 	$fullscreen.show();
+	$('body').animate({
+        scrollTop: 0
+    }, 500);
 
 });
 
@@ -26,6 +29,7 @@ $(".full-screen .close span, .full-screen img").on("click", function () {
 });
 
 function getFullSizeImage($target, url) {
+	$target.find(".view-fullsize").attr("href", url);
 	var image = $("<img />").attr('src', url)
     .on('load', function() {
         if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
