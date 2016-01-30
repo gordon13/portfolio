@@ -1,23 +1,29 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load app_extras %}
+{% load staticfiles %}
 <div class="row">
-	<div class="fullscreen"></div>
+	<div class="full-screen" style="display: none;">
+		<div class="close" title="Close"> 
+			<img src="{% static 'img/crosshair.svg' %}" alt="Close">
+		</div>
+	</div>
 	<div class="gallery">
 	{% for piece in pieces %}
-			<div class="thumbnail" style="background-image: url('{{piece.image.url}}');">
+			<div class="thumbnail" style="background-image: url('{{piece.image.url}}');" data-url="{{piece.image.url}}">
+				<div class="dark-overlay" style="display:none"></div>
 				<div class="info-overlay" style="display:none">
 					<div class="content">
+						<span class="glyphicon glyphicon-zoom-in zoom" aria-hidden="true"></span>
 						<h2>{{piece.name}}</h2>
 						<p>{{piece.description}}</p>
 						<div class="software">
 							{% for ware in piece.software.all %}
-								<img src="{{ware.image.url}}"/>
+								<img src="{{ware.image.url}}" alt="{{ware.name}}" title="{{ware.name}}" />
 							{% endfor %}
 						</div>
 					</div>
 				</div>
-				<div class="dark-overlay" style="display:none"></div>
 			</div>
 	{% endfor %}
 	</div>

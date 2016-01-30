@@ -52,3 +52,16 @@ Convert epoch time to date and time
 def epoch_to_datetime(epoch):
 	return time.strftime('%d/%m/%Y %H:%M:%S', time.localtime(float(epoch)))
 
+"""
+convert to percentage
+"""
+@register.simple_tag
+def to_percent(value_out_of_ten):
+	return (value_out_of_ten / 10) * 100
+
+"""
+Convert to int
+"""
+@register.filter()
+def to_int(value):
+    return int(value)

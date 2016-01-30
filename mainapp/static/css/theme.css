@@ -1,13 +1,18 @@
-/* navbar */
+/*/////////// navbar ///////////*/
 .navbar {
 	margin: 0;
 }
-
+.navbar li a{
+	font-size: 16px;
+}
 .navbar-inverse {
 	background-image: none;
-	background-color: #222;
+	background-color: #0C0C0C;
     background-repeat: repeat-x;
     border-radius: 0px;
+    border-bottom: 4px solid orange;
+    position: relative;
+    z-index: 100;
 }
 
 .brand .nametag {
@@ -16,19 +21,27 @@
 }
 
 /*///////////  body /////////////*/
+h1,
+h2,
+h3,
+h4 {
+	color: white;
+}
+
 body {
 	min-height: 2000px;
 	background-color: #2B2A2A;
 }
 
 /*//////////// gallery ////////////////*/
-.gallery .thumbnail{
-	display: inline-block;
+.gallery .thumbnail {
+	border: solid black 1px;
+	margin: -3px -2px -2px -2px;
 }
 
 /* thumbnails */
 .thumbnail {
-	/*background-image: url("http://i.stack.imgur.com/2OrtT.jpg");*/
+	display: inline-block;
     background-position: 50%, 50%;
     background-size: cover;
     width:300px;
@@ -47,6 +60,30 @@ body {
 	width: 300px; 
 	height: 500px;
 
+	-webkit-animation: fadeInFromNone 0.5s ease-out;
+       /*-moz-animation: fadeInFromNone 0.5s ease-out;
+         -o-animation: fadeInFromNone 0.5s ease-out;*/
+            animation: fadeInFromNone 0.5s ease-out;
+
+}
+
+@-webkit-keyframes fadeInFromNone {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInFromNone {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 .thumbnail .info-overlay {
@@ -64,6 +101,12 @@ body {
 	color: white;
 }
 
+.thumbnail .info-overlay .content .zoom{
+	font-size: 50px;
+	margin-left: 40%;
+	margin-top: -90px;
+}
+
 .thumbnail .info-overlay .software img{
 	width: 25%;
 	height: auto;
@@ -77,4 +120,38 @@ body {
 
 @keyframes slide {
     100% { margin-left: 0; }
+}
+
+/* ///////   Full screen view bit ////////// */
+.full-screen img {
+	width: 100%;	
+}
+
+.full-screen .close {
+    height: 0;
+    overflow: visible;
+}
+/*////////////////////   skills      /////////////////////////*/
+.skills-software .software * {
+    display: inline-block;
+}
+.skills-software .software img {
+    width: 55px;
+    margin-right: 20px;
+    margin-bottom: 5px;
+    margin-left: 15px;
+}
+.skills-software .software span {
+    color: white;
+    font-size: 18;
+    width: 100px;
+    vertical-align: middle;
+}
+.skills-software .software .progress {
+    width: 200px;
+    margin: 0 0 0 20px;
+    vertical-align: middle;
+}
+.skills-software .software .progress-bar {
+    font-size: 18;
 }

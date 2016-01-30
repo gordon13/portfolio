@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.template import RequestContext
 
-from models import Piece
+from models import Piece, Skill, Software
 
 def index(request):
     pieces = Piece.objects.all()
@@ -26,12 +26,14 @@ def threedee(request):
     )
 
 def skills(request):
-    skills = None
+    software = Software.objects.all()
+    skills = Skill.objects.all()
     return render(
         request,
         'app/skills.html',
         context_instance = RequestContext(request,
         {
-            'skills':skills
+            'skills':skills,
+            'software':software
         })
     )

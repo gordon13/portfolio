@@ -1,29 +1,37 @@
-// gallery thumbnail darkening effect
+// gallery info effect
 $(".thumbnail").mouseenter( function (){
-  console.log("mouse in")
-  $(".dark-overlay").show();
-  $(this).find(".dark-overlay").hide();
-  $(this).find(".info-overlay").show();
-  timeoutObj.startT();
+
+  	$(this).find(".dark-overlay, .info-overlay").show();
+
 }).mouseleave( function (){
-  console.log("mouse out");
-  $(".dark-overlay").hide();
-  $(".info-overlay").hide();
-  timeoutObj.clearT();
+
+  	$(".dark-overlay, .info-overlay").hide();
+
+}).on("click", function () {
+
+	$fullscreen = $(".full-screen");
+	$fullscreen.find(">img").remove();
+	getFullSizeImage($fullscreen, $(this).data("url"));
+	$fullscreen.show();
+
 });
 
-function TimeoutObj(){
-	var timeout = null;
-	return {
-	    startT: function(){
-			timeout = setTimeout(function() {
-		  		$(".dark-overlay").hide();
-		  	}, 1000);
-		},
-		clearT: function(){
-			clearTimeout(timeout);
-		}
-    }
-}
+// full screen close button
+$(".full-screen .close span, .full-screen img").on("click", function () {
 
-var timeoutObj = TimeoutObj();
+	$fullscreen = $(".full-screen");
+	$fullscreen.find(">img").remove();
+	$fullscreen.hide();
+	
+});
+
+function getFullSizeImage($target, url) {
+	var image = $("<img />").attr('src', url)
+    .on('load', function() {
+        if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
+            console.log('broken image!');
+        } else {
+            $target.append(image);
+        }
+    });
+}
