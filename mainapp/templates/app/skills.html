@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load app_extras %}
-<h1>Software proficiency</h1>
 
+	<h1>Software proficiency</h1>
 	<div class="skills-software">
 		{% for ware in software %}
 
@@ -18,12 +18,18 @@
 		{% endfor %}
 	</div>
 
+	<h1>Skill areas</h1>
 	<div class="skills-art">
-		<ul>
-			{% for skill in skills %}
-				<li>{{skill}}</li>
-			{% endfor %}
-		</ul>
+		{% for skill in skills_obj %}
+		<div class="row skill">
+			<span>{{skill.name}}</span>
+			<div class="progress">
+				<div class="progress-bar progress-bar-warning" role="progressbar" style="width:{% to_percent skill.level %}%" title="{{skill.level|to_int}}/10">
+					{{skill.level|to_int}}/10
+				</div>
+			</div>
+		</div>
+		{% endfor %}
 	</div>
 
 

@@ -15,19 +15,28 @@
     z-index: 100;
 }
 
+.nav-toggle .icon-bar {
+    color: orange;
+}
+
+/*////////// brand ////////////*/
 .brand .nametag {
-	border-radius: 50%;
-	background-color: green;
-}
 
+}
+.nametag .first-name {
+    color: white;
+}
+.nametag .last-name {
+    color: orange;
+}
 /*///////////  body /////////////*/
-h1,
-h2,
-h3,
-h4 {
-	/*color: #9d9d9d;*/
+h1 {
+	text-transform: uppercase;
+    font-weight: 900;
 }
-
+p {
+    font-weight: normal;
+}
 
 body {
 	min-height: 2000px;
@@ -57,6 +66,7 @@ body {
 	overflow: hidden;
 	position: relative;
 	margin: 0;
+
 }
 
 .thumbnail .dark-overlay {
@@ -64,7 +74,9 @@ body {
 	position: absolute;
 	width: 300px; 
 	height: 500px;
-	border: 4px solid orange;
+	border: 1px solid orange;
+    border-right-width: 3px;
+    border-bottom-width: 3px;
 	-webkit-animation: fadeInFromNone 0.5s ease-out;
        /*-moz-animation: fadeInFromNone 0.5s ease-out;
          -o-animation: fadeInFromNone 0.5s ease-out;*/
@@ -108,6 +120,13 @@ body {
     border-bottom: solid 3px rgb(73, 112, 199);
     padding-bottom: 10px;
 }
+
+.thumbnail .info-overlay p {
+    font-weight: 600;
+    font-size: small;
+    color: #9D9D9D;
+}
+
 .thumbnail .info-overlay .content{
 	margin-top: 75%;
 	padding: 15px;
@@ -183,11 +202,40 @@ body {
     width: 100px;
     vertical-align: middle;
 }
+
 .skills-software .software .progress {
     width: 200px;
     margin: 0 0 0 20px;
     vertical-align: middle;
+    border-radius: 0;
 }
+
 .skills-software .software .progress-bar {
+    font-size: 18;
+}
+
+/* art/expertise */
+.row.skill {
+    margin-bottom: 10px;
+}
+.skills-art .skill * {
+    display: inline-block;
+}
+.skills-art .skill span {
+    color: white;
+    font-size: 18;
+    width: 30%;
+    vertical-align: middle;
+    margin-left: 15px;
+}
+
+.skills-art .skill .progress {
+    width: 30%;
+    margin: 0 0 0 20px;
+    vertical-align: middle;
+    border-radius: 0;
+}
+
+.skills-art .skill .progress-bar {
     font-size: 18;
 }

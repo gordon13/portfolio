@@ -14,11 +14,11 @@ def index(request):
         })
     )
 
-def threedee(request):
+def about(request):
 
     return render(
         request,
-        'app/3d.html',
+        'app/about.html',
         context_instance = RequestContext(request,
         {
 
@@ -27,13 +27,13 @@ def threedee(request):
 
 def skills(request):
     software = Software.objects.all()
-    skills = Skill.objects.all()
+    skills_obj = Skill.objects.all()
     return render(
         request,
         'app/skills.html',
         context_instance = RequestContext(request,
         {
-            'skills':skills,
+            'skills_obj':skills_obj,
             'software':software
         })
     )

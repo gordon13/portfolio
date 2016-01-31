@@ -130,3 +130,9 @@ MEDIA_URL = '/media/'
 PIECE_TYPES = ( ('art','Art'),
                 ('audio','Audio'),
                 ('writing','Writing'))
+
+# Custom Globl vars
+SOFTWARE_TYPES = ( ('3d','3D'),
+                   ('2d','2D'),
+                   ('tool','Tool'),
+                   ('misc','Misc'))

@@ -24,8 +24,9 @@ urlpatterns = [
 
     #pages
     url(r'^$', views.index, name='index'),
-    url(r'^threedee/$', views.threedee, name='threedee'),
+    #url(r'^threedee/$', views.threedee, name='threedee'),
     url(r'^skills/$', views.skills, name='skills'),
+    url(r'^about/$', views.about, name='about'),
 ]
 
 if settings.DEBUG:

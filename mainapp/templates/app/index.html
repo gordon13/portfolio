@@ -19,7 +19,7 @@
 					<div class="content">
 						<span class="glyphicon glyphicon-zoom-in zoom" aria-hidden="true"></span>
 						<h2>{{piece.name}}</h2>
-						<p>{{piece.description}}</p>
+						<p>{{piece.description|truncatechars:18 }} {% if piece.description %}(read more){% endif %}</p>
 						<div class="software">
 							{% for ware in piece.software.all %}
 								<img src="{{ware.image.url}}" alt="{{ware.name}}" title="{{ware.name}}" />
