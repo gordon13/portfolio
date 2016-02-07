@@ -28,13 +28,15 @@
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
+          {% url 'index' as index%}
+          <li class="{% if request.path == index %}active{% endif %}"><a href="{{index}}">Gallery</a></li>
           {% url 'skills' as skills%}
           <li class="{% if request.path == skills %}active{% endif %}"><a href="{{skills}}">Skills</a></li>
           {% url 'about' as about%}
           <li class="{% if request.path == about %}active{% endif %}"><a href="{{about}}">About</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">paullehenaff@msn.com</a></li>
+          <li><a class="email" href="#">paullehenaff@msn.com</a></li>
         </ul>
       </div><!--/.nav-collapse -->
     </div><!--/.container-fluid -->

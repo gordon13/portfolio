@@ -3,17 +3,33 @@
 {% load app_extras %}
 {% load staticfiles %}
 <div class="row">
-	<div class="full-screen" style="display: none;">
+	<!-- Modal -->
+	<div id="modal-full-screen" class="modal fade" role="dialog">
+	  	<div class="modal-dialog">
+	    	<!-- Modal content-->
+	    	<div class="modal-content">
+		      	<div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal"><img class="close" src="{% static 'img/crosshair.svg' %}" alt="Close"></img></button>
+			        <h4 class="modal-title"></h4>
+			        <p class="modal-description"></p>
+			        <a target="_blank" href="#" class="view-fullsize" title="View full size image">View full size image</a>
+	      		</div>
+	      		<div class="modal-body">
+	      		</div>
+	    	</div>
+	  	</div>
+	</div>
+<!-- 	<div class="full-screen" style="display: none;">
 		<div class="close" title="Close"> 
 			<img src="{% static 'img/crosshair.svg' %}" alt="Close">
 		</div>
 		<div class="info"> 
 			<a target="_blank" href="#" class="view-fullsize" title="View full size image">View full size image</a>
 		</div>
-	</div>
+	</div> -->
 	<div class="gallery">
 	{% for piece in pieces %}
-			<div class="thumbnail" style="background-image: url('{{piece.image.url}}');" data-url="{{piece.image.url}}">
+			<div class="thumbnail" style="background-image: url('{{piece.image.url}}');" data-url="{{piece.image.url}}" data-title="{{piece.name}}" data-description="{{piece.description}}">
 				<div class="dark-overlay" style="display:none"></div>
 				<div class="info-overlay" style="display:none">
 					<div class="content">
@@ -22,7 +38,7 @@
 						<p>{{piece.description|truncatechars:18 }} {% if piece.description %}(read more){% endif %}</p>
 						<div class="software">
 							{% for ware in piece.software.all %}
-								<img src="{{ware.image.url}}" alt="{{ware.name}}" title="{{ware.name}}" />
+								<img src="{{ware.image.url}}" alt="{{ware.name}}" title="{{ware.name}}" data-toggle="modal" data-target="#modal-full-screen"/>
 							{% endfor %}
 						</div>
 					</div>

@@ -47,6 +47,34 @@ body {
 }
 
 /*//////////// gallery ////////////////*/
+.modal-content {
+    background-color: black;
+    border-radius: 0px;
+}
+
+.modal-body img {
+    width: 100%;
+}
+
+.modal-title {
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.modal-header,
+.modal-footer {
+    border-color: #3C3B3B;
+    padding: 5px 15px 5px 15px;
+}
+
+.modal-dialog {
+    width: auto;
+    margin-top: 80px;
+    margin-right: 15%;
+    margin-bottom: 50px;
+    margin-left: 15%;
+}
+
 .gallery .thumbnail {
 	border: solid black 1px;
 	margin: -3px -2px -2px -2px;
@@ -160,14 +188,21 @@ body {
 	max-width: 1920px;
 }
 
-.full-screen .close {
-    height: 0;
+#modal-full-screen .close {
     overflow: visible;
     float: none;
     text-shadow: none;
-    opacity: 0.3;
+    opacity: 0.5;
     float: right;
+    margin-top: 5px;
+    height: 15px;
+    outline: none;
 }
+
+#modal-full-screen .close:hover {
+    opacity: 0.9;
+}
+
 .full-screen .close img {
 	width: auto;
 }
@@ -224,13 +259,13 @@ body {
 .skills-art .skill span {
     color: white;
     font-size: 18;
-    width: 30%;
+    width: 300px;
     vertical-align: middle;
     margin-left: 15px;
 }
 
 .skills-art .skill .progress {
-    width: 30%;
+    width: 200px;
     margin: 0 0 0 20px;
     vertical-align: middle;
     border-radius: 0;
@@ -238,4 +273,10 @@ body {
 
 .skills-art .skill .progress-bar {
     font-size: 18;
+}
+
+/*////////// about    //////////////*/
+img.profile-image {   
+    float: left;
+    margin-right: 10px;
 }
